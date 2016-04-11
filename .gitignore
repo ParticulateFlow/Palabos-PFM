@@ -1,3 +1,13 @@
+# ignore all
+*
+# unignore with extension
+!/**/
+!*.*
+
+# unignore commonly used files without extensions
+!Makefile
+!postscript
+
 \#*\#
 *~
-
+.sconsign.dblite
