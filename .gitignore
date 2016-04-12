@@ -4,10 +4,15 @@
 !/**/
 !*.*
 
+# ignore compiled files
+*.o
+*.pyc
+
 # unignore commonly used files without extensions
 !Makefile
 !postscript
 
+# ignore temp files from editors
 \#*\#
 *~
 .sconsign.dblite
