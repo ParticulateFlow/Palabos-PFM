@@ -302,6 +302,6 @@ int main(int argc, char* argv[]) {
 
   timer.stopGlobal();
   timer.writeLog(pcout);
-  std::string fname("test.json");
+  std::string fname("timer.json");
   timer.writeLogJSON(fname);
 }
