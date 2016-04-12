@@ -37,8 +37,8 @@
 #include <fstream>
 #include <iomanip>
 
-#include "pfm-utils/PlbCaseTimer/plbCaseTimer.h"
-#include "pfm-utils/ProbeManager/probeManager.h"
+#include "pfm-plb-utils/PlbCaseTimer/plbCaseTimer.h"
+#include "pfm-plb-utils/ProbeManager/probeManager.h"
 
 using namespace plb;
 using namespace plb::descriptors;
