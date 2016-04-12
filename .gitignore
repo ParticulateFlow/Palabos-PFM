@@ -1,5 +1,6 @@
 # ignore all
 *
+
 # unignore with extension
 !/**/
 !*.*
@@ -7,6 +8,9 @@
 # ignore compiled files
 *.o
 *.pyc
+
+# ignore library dir
+lib/
 
 # unignore commonly used files without extensions
 !Makefile
