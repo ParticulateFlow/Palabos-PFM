@@ -213,7 +213,7 @@ int main(int argc, char* argv[]) {
 
   IncomprFlowParam<T> parameters((T) 1e-2,  // uMax
                                  (T) 600.,  // Re
-                                 80,        // N
+                                 70,        // N
                                  6.,        // lx
                                  1.         // ly 
                                  );
