@@ -45,7 +45,7 @@ using namespace plb::descriptors;
 using namespace std;
 
 typedef double T;
-#define DESCRIPTOR D3Q19Descriptor
+#define DESCRIPTOR MRTD3Q19Descriptor
 
 /// Velocity on the parabolic Poiseuille profile
 T poiseuilleVelocity(plint iY, IncomprFlowParam<T> const& parameters) {
@@ -213,7 +213,7 @@ int main(int argc, char* argv[]) {
 
   IncomprFlowParam<T> parameters((T) 1e-2,  // uMax
                                  (T) 600.,  // Re
-                                 70,        // N
+                                 80,        // N
                                  6.,        // lx
                                  1.         // ly 
                                  );
@@ -221,12 +221,15 @@ int main(int argc, char* argv[]) {
   const T imSave   = (T)0.06;
   const T vtkSave  = (T)1.;
   const T probeT   = (T)0.01;
-  const T maxT     = (T)0.1;
+  const T maxT     = (T)10;
 
   writeLogFile(parameters, "Poiseuille flow");
 
   MultiBlockLattice3D<T, DESCRIPTOR> lattice (parameters.getNx(), parameters.getNy(), 4,
-                                              new BGKdynamics<T,DESCRIPTOR>(parameters.getOmega()) );
+                                             new MRTdynamics<T,DESCRIPTOR>(parameters.getOmega()) );
+
+//  MultiBlockLattice3D<T, DESCRIPTOR> lattice (parameters.getNx(), parameters.getNy(), 4,
+//                                              new BGKdynamics<T,DESCRIPTOR>(parameters.getOmega()) );
 
   OnLatticeBoundaryCondition3D<T,DESCRIPTOR>*
     boundaryCondition = createLocalBoundaryCondition3D<T,DESCRIPTOR>();
