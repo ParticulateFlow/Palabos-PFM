@@ -221,7 +221,7 @@ int main(int argc, char* argv[]) {
   const T imSave   = (T)0.06;
   const T vtkSave  = (T)1.;
   const T probeT   = (T)0.01;
-  const T maxT     = (T)10;
+  const T maxT     = (T)0.10;
 
   writeLogFile(parameters, "Poiseuille flow");
 
