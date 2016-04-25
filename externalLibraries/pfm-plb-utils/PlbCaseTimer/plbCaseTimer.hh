@@ -147,8 +147,8 @@ namespace plb{
 
     out << "      {";
     out << "         \"name\":\"other\",\n";
-    out << "         \"time\" : " << computeOther() << ",\n";
-    out << "         \"fraction\" : " << computeOther()/(timeVec[GLOBAL_IND]/CPS << "\n";
+    out << "         \"time\":" << computeOther() << ",\n";
+    out << "         \"fraction\":" << computeOther()/((double)timeVec[GLOBAL_IND]/CPS) << "\n";
     out << "      }\n";
     
     out << "   ]\n";
