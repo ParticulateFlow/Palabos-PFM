@@ -138,14 +138,14 @@ namespace plb{
     
     index_map_t::iterator it = indexMap.begin();
     for(index_map_t::iterator it = indexMap.begin();it!=indexMap.end();++it){
-      out << "      {";
+      out << "      {\n";
       out << "         \"name\":\"" << it->first << "\",\n";
       out << "         \"time\":" << timeVec[it->second]/CPS << ",\n";
       out << "         \"fraction\":" << (double)timeVec[it->second]/(double)timeVec[GLOBAL_IND] << "\n";
       out << "      },\n";
     }
 
-    out << "      {";
+    out << "      {\n";
     out << "         \"name\":\"other\",\n";
     out << "         \"time\":" << computeOther() << ",\n";
     out << "         \"fraction\":" << computeOther()/((double)timeVec[GLOBAL_IND]/CPS) << "\n";
