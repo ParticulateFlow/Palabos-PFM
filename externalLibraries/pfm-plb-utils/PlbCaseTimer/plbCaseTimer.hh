@@ -134,24 +134,20 @@ namespace plb{
     plb_ofstream out(fname.c_str());
     
     out << "{\n";
-    out << "  \"timer\" : [\n";
-    
+
     index_map_t::iterator it = indexMap.begin();
     for(index_map_t::iterator it = indexMap.begin();it!=indexMap.end();++it){
-      out << "    {";
-      out << " \"name\" : \"" << it->first << "\","
-          << " \"time\" : " << timeVec[it->second]/CPS 
-          << " \"fraction\" : " << (double)timeVec[it->second]/(double)timeVec[GLOBAL_IND];
-      out << " },\n";
+      out << "   \"" << it->first << "\":{\n";
+      out << "      \"time\":" << timeVec[it->second]/CPS << ",\n";
+      out << "      \"fraction\":" << (double)timeVec[it->second]/(double)timeVec[GLOBAL_IND] << "\n";
+      out << "   },\n";
     }
 
-    out << "    {";
-    out << " \"name\" : \"other\",";
-    out << " \"time\" : " << computeOther() << ",";
-    out << " \"fraction\" : " << computeOther()/(timeVec[GLOBAL_IND]/CPS);
-    out << " }\n";
-    
-    out << "  ]\n";
+    out << "   \"other\":{\n";
+    out << "      \"time\":" << computeOther() << ",\n";
+    out << "      \"fraction\":" << computeOther()/((double)timeVec[GLOBAL_IND]/CPS) << "\n";
+    out << "   }\n";
+
     out << "}\n";
 
     out.close();
