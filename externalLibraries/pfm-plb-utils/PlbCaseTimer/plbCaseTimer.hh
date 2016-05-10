@@ -123,7 +123,7 @@ namespace plb{
 
     double other = computeOther();
     out << "Timer other : " << other << " seconds, " 
-        << other/(timeVec[GLOBAL_IND]/CPS) << "%" << std::endl;
+        << other/((double)timeVec[GLOBAL_IND]/CPS)*100 << "%" << std::endl;
 
   }
 
