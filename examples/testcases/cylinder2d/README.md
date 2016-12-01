@@ -5,6 +5,6 @@ It's very easy to make some words **bold** and other words *italic* with Markdow
 	* baz
 	* abc
 
-<img/test.jpg>
+[test link](img/test.png)
 
-![alt text for image](img/test.jpg "Optional title for image")
+![alt text for image](img/test.png "Optional title for image")
