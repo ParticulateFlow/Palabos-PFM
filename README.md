@@ -17,4 +17,5 @@ Other branches present are usually temporary feature branches and should by no m
 
 ## Utilities
 
-are listed here as soon as there is rudimentary documentation about them.
+[ProbeManager](externalLibraries/pfm/utils/ProbeManager/README.md)
+
