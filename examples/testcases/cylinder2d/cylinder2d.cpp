@@ -240,11 +240,12 @@ int main(int argc, char* argv[]) {
                 parameters.nCell(cx), parameters.nCell(cy), parameters.nCell(rc));
 
   std::vector<Array<T,3> > velProbeLocations, rhoProbeLocations;
-  velProbeLocations.push_back(Array<T,3>(parameters.nCell(cx+2*rc),parameters.nCell(cy),1));
-  velProbeLocations.push_back(Array<T,3>(parameters.nCell(cx+4*rc),parameters.nCell(cy),1));
 
-  rhoProbeLocations.push_back(Array<T,3>(parameters.nCell(cx+2*rc),parameters.nCell(cy),1));
-  rhoProbeLocations.push_back(Array<T,3>(parameters.nCell(cx+4*rc),parameters.nCell(cy),1));
+  velProbeLocations.push_back(Array<T,3>(cx+2*rc,cy,1./parameters.nCell(1.)));
+  velProbeLocations.push_back(Array<T,3>(cx+4*rc,cy,1./parameters.nCell(1.)));
+
+  rhoProbeLocations.push_back(Array<T,3>(cx+2*rc,cy,1./parameters.nCell(1.)));
+  rhoProbeLocations.push_back(Array<T,3>(cx+4*rc,cy,1./parameters.nCell(1.)));
 
   std::string velFname("tmp/velprobes.txt");
   std::string rhoFname("tmp/rhoprobes.txt");
