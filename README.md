@@ -17,6 +17,6 @@ Other branches present are usually temporary feature branches and should by no m
 
 ## Utilities
 
-[PlbCaseTimer](externalLibraries/pfm/utils/PlbCaseTimer/README.md)
-[ProbeManager](externalLibraries/pfm/utils/ProbeManager/README.md)
+* [PlbCaseTimer](externalLibraries/pfm/utils/PlbCaseTimer/README.md)
+* [ProbeManager](externalLibraries/pfm/utils/ProbeManager/README.md)
 
