@@ -38,12 +38,13 @@ namespace plb{
     void writeDensityProbes(MultiBlockLattice3D<T,Descriptor> &lattice, plint const iT);
   private:
     std::string velFname,rhoFname;
-    ArrayVector velProbes, rhoProbes;
+    ArrayVector velProbesOrig, rhoProbesOrig;
+    ArrayVector velProbesLB, rhoProbesLB;
     IncomprFlowParam<T> parameters;
 
     void writeProbeCoords(plb_ofstream &s, ArrayVector &probes);
 
-    double xFactor, tFactor, velFactor, rhoFactor;
+    T xFactor, tFactor, velFactor, rhoFactor;
 
     static plint const linewidth = 14;
     static plint const precision = 6;
