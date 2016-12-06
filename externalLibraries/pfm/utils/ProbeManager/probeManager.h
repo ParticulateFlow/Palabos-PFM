@@ -28,7 +28,9 @@ namespace plb{
                  std::string const &densityFname_, 
                  ArrayVector const &velocityProbeLocations_,
                  ArrayVector const &densityProbeLocations_,
-                 IncomprFlowParam<T> const &param_);
+                 IncomprFlowParam<T> const &param_,
+                 T const xFactor_ = 0, T const tFactor_ = 0, 
+                 T const velFactor_ = 0, T const rhoFactor_ = 0);
 
     void writeHeaders();
 
@@ -36,10 +38,13 @@ namespace plb{
     void writeDensityProbes(MultiBlockLattice3D<T,Descriptor> &lattice, plint const iT);
   private:
     std::string velFname,rhoFname;
-    ArrayVector velProbes, rhoProbes;
+    ArrayVector velProbesOrig, rhoProbesOrig;
+    ArrayVector velProbesLB, rhoProbesLB;
     IncomprFlowParam<T> parameters;
 
     void writeProbeCoords(plb_ofstream &s, ArrayVector &probes);
+
+    T xFactor, tFactor, velFactor, rhoFactor;
 
     static plint const linewidth = 14;
     static plint const precision = 6;
