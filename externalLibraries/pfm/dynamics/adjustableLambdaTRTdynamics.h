@@ -53,9 +53,14 @@ namespace plb {
     static int id;
     T const lambda;
 
+    T calcOmegaMin(T const omega)
+    {
+      return ( 4. - 2.*omega )/( 4.*lambda*omega + 2. - omega );
+    }
   };
 
-  #include "adjustableLambdaTRTdynamics.hh"
-  
 } /*  namespace plb */
+
+#include "pfm/dynamics/adjustableLambdaTRTdynamics.hh"
+
 #endif /* ADJUSTABLE_LAMBDA_TRT_DYNAMICS_H */
