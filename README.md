@@ -19,7 +19,7 @@ Other branches present are usually temporary feature branches and should by no m
 
 ### MRT dynamics
 
-In Palabos, the relaxation rates for MRT dynamics are preset to values from literature. However, most people nowadays use either the TRT relaxation from Ginzburg et al. or the relaxation rates from Pan et al. (2006). Those two settings can now be used by defining
+In Palabos, the relaxation rates for MRT dynamics are preset to values from literature. However, most people nowadays use either the TRT relaxation by Ginzburg et al. (2008) or the relaxation rates of Pan et al. (2006). Those two settings can now be used by defining
 ```
 #define MRT_USE_TRT_RELAXATION
 ```
@@ -27,7 +27,12 @@ or
 ```
 #define MRT_USE_PAN_RELAXATION 
 ```
-**BEFORE** the Palabos headers are included. The switches only work in 3D.
+_**before**_ the 
+```
+#include "palabos3D.h
+#include "palabos3D.hh"
+```
+commands in your case file.
 
 ## Utilities
 
