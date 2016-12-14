@@ -68,7 +68,7 @@ namespace plb{
     T const omega_plus = this->getOmega();
     T const omega_min = calcOmegaMin(omega_plus);
 
-    cell[0] += -omega_plus*cell[0] + omega_min*eq[0];
+    cell[0] += -omega_plus*(cell[0] - eq[0]);
 
     for (plint i=1; i<=Descriptor<T>::q/2; ++i) {
         cell[i] += -omega_plus*(f_plus[i]-eq_plus[i]) - omega_min*(f_minus[i]-eq_minus[i]);
