@@ -32,7 +32,7 @@ _**before**_ the
 #include "palabos3D.h
 #include "palabos3D.hh"
 ```
-commands in your case file.
+commands in your case file.  A "magic number" of 3/16 is hardcoded (gives best bounceback).
 
 ## Utilities
 
