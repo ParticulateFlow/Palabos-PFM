@@ -19,4 +19,5 @@ lib/
 # ignore temp files from editors
 \#*\#
 *~
+.\#*
 .sconsign.dblite

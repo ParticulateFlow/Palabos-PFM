@@ -142,6 +142,60 @@ template<typename T> struct mrtTemplatesImpl<T, descriptors::MRTD3Q19DescriptorB
     
     static void computef_InvM_Smoments(Array<T,19>& f, const Array<T,19> &moments, const T &omega) 
     {
+
+      // TRT relaxation rates
+#ifdef MRT_USE_TRT_RELAXATION
+
+        T omega_min = 8.*(2.-omega)/(8.-omega);
+
+        T mom0 = moments[0];
+        T mom1 = moments[1] * omega;
+        T mom2 = moments[2] * omega;
+        T mom3 = moments[3];
+        T mom4 = moments[4] * omega_min;
+        T mom5 = moments[5];
+        T mom6 = moments[6] * omega_min;
+        T mom7 = moments[7];
+        T mom8 = moments[8] * omega_min;
+        T mom9 = moments[9] * omega;
+        T mom10 = moments[10] * omega;
+        T mom11 = moments[11] * omega;
+        T mom12 = moments[12] * omega;
+        T mom13 = moments[13] * omega;
+        T mom14 = moments[14] * omega;
+        T mom15 = moments[15] * omega;
+        T mom16 = moments[16] * omega_min;
+        T mom17 = moments[17] * omega_min;
+        T mom18 = moments[18] * omega_min;
+
+        // relaxation rates from Pan et al. (2006)
+#elif defined MRT_USE_PAN_RELAXATION
+
+        T omega_min = 8.*(2.-omega)/(8.-omega);
+
+        T mom0 = moments[0];
+        T mom1 = moments[1] * omega_min;
+        T mom2 = moments[2] * omega_min;
+        T mom3 = moments[3];
+        T mom4 = moments[4] * omega_min;
+        T mom5 = moments[5];
+        T mom6 = moments[6] * omega_min;
+        T mom7 = moments[7];
+        T mom8 = moments[8] * omega_min;
+        T mom9 = moments[9] * omega;
+        T mom10 = moments[10] * omega_min;
+        T mom11 = moments[11] * omega;
+        T mom12 = moments[12] * omega_min;
+        T mom13 = moments[13] * omega;
+        T mom14 = moments[14] * omega;
+        T mom15 = moments[15] * omega;
+        T mom16 = moments[16] * omega_min;
+        T mom17 = moments[17] * omega_min;
+        T mom18 = moments[18] * omega_min;
+
+        // relaxation rates proposed by Palabos authors (and probably d'Humieres et al)
+#else
+
         T mom0 = moments[0] * MRTDescriptor::S[0];
         T mom1 = moments[1] * MRTDescriptor::S[1];
         T mom2 = moments[2] * MRTDescriptor::S[2];
@@ -161,6 +215,8 @@ template<typename T> struct mrtTemplatesImpl<T, descriptors::MRTD3Q19DescriptorB
         T mom16 = moments[16] * MRTDescriptor::S[16];
         T mom17 = moments[17] * MRTDescriptor::S[17];
         T mom18 = moments[18] * MRTDescriptor::S[18];
+
+#endif
         
         T mom0tmp = mom0 / (T)19;
         
